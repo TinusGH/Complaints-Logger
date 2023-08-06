@@ -1,0 +1,63 @@
+﻿@model Complaints.Controllers.ComplaintsView
+
+@{
+    ViewBag.Title = "Complaint";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Complaint Details</h2>
+
+<div>
+    <h4></h4>
+    <hr />
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ComplaintsModel.FullName)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.ComplaintsModel.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ComplaintsModel.MobileNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ComplaintsModel.ComplaintDetails)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ComplaintMetaData.IP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ComplaintMetaData.DateLogged)
+            </th>
+        <tr>
+
+
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.ComplaintsModel.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ComplaintsModel.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ComplaintsModel.MobileNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ComplaintsModel.ComplaintDetails)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ComplaintMetaData.IP)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ComplaintMetaData.DateLogged)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.ComplaintsModel.ID })
+            </td>
+        </tr>
+
+    </table>
+    @Html.ActionLink("Back to List", "Complaints")
+</div>

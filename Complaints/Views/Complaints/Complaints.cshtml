@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Complaints.Controllers.ComplaintsView>
+
+@{
+    ViewBag.Title = "Complaints";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Complaints Dashboard</h2>
+
+<p>
+    @Html.ActionLink("Create Complaint", "CreateForm")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ComplaintsModel.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComplaintsModel.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComplaintsModel.MobileNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComplaintMetaData.DateLogged)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.ComplaintsModel.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.ComplaintsModel.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.ComplaintsModel.MobileNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.ComplaintMetaData.DateLogged)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Complaint", new { id = item.ComplaintsModel.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ComplaintsModel.ID })
+            </td>
+        </tr>
+    }
+
+</table>
