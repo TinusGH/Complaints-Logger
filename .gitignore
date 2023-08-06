@@ -285,7 +285,7 @@ ServiceFabricBackup/
 *.rptproj.bak
 
 # SQL Server files
-*.mdf
+#*.mdf
 *.ldf
 *.ndf
 
